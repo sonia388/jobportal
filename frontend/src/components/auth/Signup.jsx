@@ -44,10 +44,9 @@ const Signup = () => {
         if (input.file) {
             formData.append("file", input.file);
         }
-
         try {
             dispatch(setLoading(true));
-            const res = await axios.post(`${USER_API_END_POINT}/register`, formData, {
+            const res = await axios.post("https://jobportal-1-px6m.onrender.com/api/v1/user/register", formData, {
                 headers: { 'Content-Type': "multipart/form-data" },
                 withCredentials: true,
             });

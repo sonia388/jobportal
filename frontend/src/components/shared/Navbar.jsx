@@ -17,7 +17,7 @@ const Navbar = () => {
 
     const logoutHandler = async () => {
         try {
-            const res = await axios.get(`${USER_API_END_POINT}/logout`, { withCredentials: true });
+            const res = await axios.get("https://jobportal-1-px6m.onrender.com/api/v1/user/logout", { withCredentials: true });
             if (res.data.success) {
                 dispatch(setUser(null));
                 navigate("/");
@@ -81,7 +81,7 @@ const Navbar = () => {
                                             {
                                                 user && user.role === 'student' && (
                                                     <div className='text-bold flex w-fit items-center gap-2 cursor-pointer'>
-                                                        <User2 className='mr-2 h-5 w-5'/>
+                                                        <User2 className='mr-2 h-5 w-5' />
                                                         <Button variant="link" className="border-none" > <Link to="/profile">View Profile</Link></Button>
                                                     </div>
                                                 )
